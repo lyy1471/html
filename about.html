@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>宝贝积分 KidPoint — 关于</title>
+  <meta name="description" content="KidPoint 宝贝积分：多孩档案、行为记录、任务打卡、奖励与里程碑、统计与备份。支持：super_soft@outlook.com">
+  <style>
+    :root {
+      --bg0: #e8ecf8;
+      --bg1: #f2f0fb;
+      --surface: rgba(255, 255, 255, 0.82);
+      --surface-solid: #ffffff;
+      --text: #141722;
+      --muted: #5a6270;
+      --accent: #2563eb;
+      --accent-dim: #1d4ed8;
+      --accent-soft: rgba(37, 99, 235, 0.12);
+      --border: rgba(20, 23, 34, 0.08);
+      --shadow: 0 4px 24px rgba(20, 23, 34, 0.06);
+      --shadow-lg: 0 12px 40px rgba(20, 23, 34, 0.08);
+      --radius: 16px;
+      --radius-sm: 12px;
+      --maxw: 760px;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--text);
+      background: linear-gradient(165deg, var(--bg0) 0%, var(--bg1) 48%, #eef1f8 100%);
+      min-height: 100vh;
+    }
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 2rem 1.25rem 3.5rem;
+    }
+    .hero {
+      text-align: center;
+      padding: 2.25rem 1.5rem 2rem;
+      margin-bottom: 1.75rem;
+      border-radius: calc(var(--radius) + 4px);
+      background: linear-gradient(145deg, #ffffff 0%, #f4f6fd 55%, #eef2ff 100%);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: -40% -20% auto;
+      height: 70%;
+      background: radial-gradient(ellipse at center, rgba(37, 99, 235, 0.14) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 1; }
+    .badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent-dim);
+      background: var(--accent-soft);
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 0.85rem;
+    }
+    h1 {
+      font-size: clamp(1.65rem, 4.5vw, 2rem);
+      font-weight: 750;
+      margin: 0 0 0.4rem;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+    }
+    .tagline {
+      color: var(--muted);
+      font-size: 1.02rem;
+      margin: 0 0 0.5rem;
+      max-width: 28em;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .en-brand {
+      display: block;
+      font-size: 0.98rem;
+      color: var(--muted);
+      font-weight: 500;
+      margin-bottom: 1.35rem;
+    }
+    .store-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.35rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      background: linear-gradient(180deg, #3b82f6 0%, var(--accent) 100%);
+      border: none;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .store-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+    }
+    .store-cta:active { transform: translateY(0); }
+    .store-cta svg { width: 1.15em; height: 1.15em; flex-shrink: 0; }
+    .store-meta {
+      margin-top: 0.65rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    section {
+      background: var(--surface);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.35rem 1.5rem;
+      margin-bottom: 1rem;
+      box-shadow: var(--shadow);
+    }
+    section h2 {
+      font-size: 1.08rem;
+      margin: 0 0 1rem;
+      font-weight: 650;
+      letter-spacing: -0.02em;
+      padding-bottom: 0.65rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .feat {
+      margin-bottom: 1.35rem;
+    }
+    .feat:last-child { margin-bottom: 0; }
+    .feat h3 {
+      font-size: 0.95rem;
+      font-weight: 650;
+      margin: 0 0 0.35rem;
+      color: var(--text);
+    }
+    .feat h3 .sub {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 550;
+      color: var(--muted);
+      margin-top: 0.15rem;
+    }
+    .feat p {
+      margin: 0.35rem 0 0;
+      font-size: 0.95rem;
+    }
+    p.en {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin: 0.5rem 0 0;
+      padding-top: 0.5rem;
+      border-top: 1px dashed rgba(20, 23, 34, 0.1);
+    }
+    p.en--plain {
+      border-top: none;
+      padding-top: 0.65rem;
+    }
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.65rem 1rem;
+      margin-top: 0.35rem;
+    }
+    .contact-row a {
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+      word-break: break-all;
+    }
+    .contact-row a:hover { text-decoration: underline; }
+    .muted { color: var(--muted); font-size: 0.95rem; margin: 0; }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.84rem;
+      margin-top: 2.25rem;
+      padding-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <div class="hero-inner">
+        <span class="badge">App Store</span>
+        <h1>宝贝积分</h1>
+        <p class="tagline">面向家庭的儿童习惯与积分工具：记录行为、完成任务、兑换奖励，并用数据看见成长。</p>
+        <span class="en-brand">KidPoint — habits, tasks &amp; rewards for families</span>
+        <a class="store-cta" href="https://apps.apple.com/app/id6761728658" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          Download on the App Store
+        </a>
+      </div>
+    </header>
+
+    <section aria-labelledby="intro-heading">
+      <h2 id="intro-heading">应用简介 · About</h2>
+      <div class="feat">
+        <p class="muted" style="margin:0;">宝贝积分帮家长用「积分」把日常习惯变简单：每个孩子独立一套积分名与流水，首页即可加减分；配合每日/每周任务与奖励中心，让努力看得见、兑得到。</p>
+        <p class="feat p en" style="border-top:none;padding-top:0.65rem;">KidPoint turns everyday habits into a clear point system. Each child has their own profile and ledger, quick logging from home, plus tasks and a reward center so progress is easy to track and celebrate.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="features-heading">
+      <h2 id="features-heading">功能说明 · Features</h2>
+
+      <div class="feat">
+        <h3>多孩档案与积分体系 <span class="sub">Child profiles &amp; point naming</span></h3>
+        <p>添加多个孩子，随时切换；每人独立积分与记录。可自定义积分名称（例如星星、金币、积分），适配不同家庭的叫法。</p>
+        <p class="en">Multiple child profiles with one-tap switching. Each child keeps a separate balance and history, and you can rename “points” to match your family’s style.</p>
+      </div>
+
+      <div class="feat">
+        <h3>行为记录 <span class="sub">Behavior logging</span></h3>
+        <p>为好习惯与待改进项配置条目，在首页快速记录加减分；可为单项行为设置每日次数上限，避免重复刷屏。</p>
+        <p class="en">Configure good behaviors and ones to improve, then log changes in seconds from the home screen—with optional daily caps per behavior.</p>
+      </div>
+
+      <div class="feat">
+        <h3>任务与周期 <span class="sub">Tasks &amp; periods</span></h3>
+        <p>创建每日或每周任务：设定目标次数与完成奖励；新周期开始时，可按规则处理未达标情况（例如扣分），并可配合本地提醒。</p>
+        <p class="en">Daily or weekly tasks with targets and bonuses; when a new period starts, you can apply rules for misses (e.g. penalties), with optional local reminders.</p>
+      </div>
+
+      <div class="feat">
+        <h3>奖励中心 <span class="sub">Reward center</span></h3>
+        <p>兑换型奖励：设定所需积分，孩子攒够即可兑换；里程碑：当总积分达到目标时可领取庆祝。兑换与领取记录可查。</p>
+        <p class="en">Redeemable rewards with point costs, plus milestones when totals hit your targets—history stays visible for both.</p>
+      </div>
+
+      <div class="feat">
+        <h3>统计与明细 <span class="sub">Stats &amp; history</span></h3>
+        <p>查看积分趋势（如多日走势）并按类型浏览流水，方便家长和孩子一起复盘「这周哪里做得好」。</p>
+        <p class="en">Trends over time and filterable ledgers so you can review progress together.</p>
+      </div>
+
+      <div class="feat">
+        <h3>数据导出与安全 <span class="sub">Export &amp; your data</span></h3>
+        <p>支持将数据导出为文件备份与再次导入；也可在支持的设备上使用系统提供的云或文件方式做备份（以应用内实际选项为准）。</p>
+        <p class="en">Export and import backups when you want a copy off-device; cloud/file options depend on what the app offers on your device.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="privacy-heading">
+      <h2 id="privacy-heading">隐私说明 · Privacy</h2>
+      <p class="muted" style="margin:0 0 0.65rem;">本应用以<strong>设备本地存储</strong>为主，积分与记录由您在家庭场景下使用和管理。您主动进行的数据导出、导入或备份，均由您本人发起与保管。我们不会在本页面提供单独的隐私政策链接；如您对数据处理有疑问，欢迎通过下方邮箱联系，我们将在合理时间内回复。</p>
+      <p class="feat p en" style="border-top:none;padding-top:0;margin:0;">The app is built around <strong>on-device storage</strong> for everyday family use. Any export, import, or backup is initiated and controlled by you. There is no separate privacy-policy URL on this page; for questions about how data is handled, contact us by email below and we’ll respond in a reasonable time.</p>
+    </section>
+
+    <section aria-labelledby="support-heading">
+      <h2 id="support-heading">技术支持 · Support</h2>
+      <p class="muted" style="margin:0;">反馈问题、建议或合作咨询：</p>
+      <div class="contact-row">
+        <a href="mailto:super_soft@outlook.com">super_soft@outlook.com</a>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 宝贝积分 · KidPoint</p>
+    </footer>
+  </div>
+</body>
+</html>
