@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>游戏盒子 — 关于</title>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --card: #1a2332;
+      --text: #e8eef5;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --border: #2d3a4d;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: radial-gradient(ellipse 80% 50% at 50% -20%, #1e3a5f 0%, var(--bg) 55%);
+      color: var(--text);
+      line-height: 1.65;
+      padding: 2rem 1.25rem 3rem;
+    }
+    .wrap {
+      max-width: 40rem;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 0 0 0.35rem;
+      letter-spacing: 0.02em;
+    }
+    .tagline {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.35rem;
+      margin-bottom: 1rem;
+    }
+    section h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin: 0 0 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    p { margin: 0 0 0.75rem; }
+    p:last-child { margin-bottom: 0; }
+    .contact {
+      text-align: center;
+      padding: 1.5rem 1.35rem;
+    }
+    .contact a {
+      color: var(--accent);
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      word-break: break-all;
+    }
+    .contact a:hover { text-decoration: underline; }
+    .foot {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>游戏盒子</h1>
+    <p class="tagline">多款休闲小游戏合集，打开即玩。</p>
+
+    <section>
+      <h2>功能说明</h2>
+      <p>
+        「游戏盒子」把几款轻量小游戏放在同一个应用里，方便你随时点开消磨时间。
+        界面尽量保持简单：选游戏、开始玩，没有复杂账号体系。具体包含哪些游戏，以应用内列表为准，我们也会不定期调整或优化体验。
+      </p>
+    </section>
+
+    <section>
+      <h2>隐私说明</h2>
+      <p>
+        我们重视你的隐私。应用以本地游玩为主，不会要求你注册账号；一般情况下也不会主动收集可识别个人身份的信息。
+      </p>
+      <p>
+        若你使用不同系统版本或商店渠道，平台或系统可能会按各自政策处理与崩溃、统计相关的匿名数据，这类情况以设备与商店的说明为准。
+      </p>
+      <p>
+        如有疑问或希望反馈数据相关问题，欢迎通过下方邮箱联系我们。
+      </p>
+    </section>
+
+    <section class="contact">
+      <h2>联系邮箱</h2>
+      <p style="margin-bottom: 0.5rem; color: var(--muted); font-size: 0.9rem;">合作、建议、问题反馈均可邮件联系：</p>
+      <a href="mailto:super_soft@outlook.com">super_soft@outlook.com</a>
+    </section>
+
+    <p class="foot">本页仅供说明与展示，内容可能随版本更新而调整。</p>
+  </div>
+</body>
+</html>
