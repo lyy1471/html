@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>关于 AI百宝箱</title>
+    <style>
+      :root {
+        --bg: #ffffff;
+        --card: #ffffff;
+        --text: #111827;
+        --muted: rgba(17, 24, 39, 0.7);
+        --border: rgba(17, 24, 39, 0.12);
+        --primary: #4f46e5;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0b1020;
+          --card: #111827;
+          --text: rgba(255, 255, 255, 0.92);
+          --muted: rgba(255, 255, 255, 0.65);
+          --border: rgba(255, 255, 255, 0.14);
+          --primary: #818cf8;
+          --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        }
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
+          Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+        background: radial-gradient(1200px 600px at 30% 0%, rgba(79, 70, 229, 0.12), transparent 55%),
+          radial-gradient(900px 520px at 90% 20%, rgba(168, 85, 247, 0.10), transparent 50%),
+          var(--bg);
+        color: var(--text);
+        line-height: 1.7;
+      }
+      a { color: var(--primary); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      .wrap { max-width: 920px; margin: 0 auto; padding: 28px 18px 56px; }
+      .hero {
+        padding: 22px 18px;
+        border-radius: 20px;
+        background: linear-gradient(135deg, rgba(79, 70, 229, 0.18), rgba(168, 85, 247, 0.12));
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+      }
+      .title { margin: 0; font-size: 24px; font-weight: 800; letter-spacing: -0.2px; }
+      .subtitle { margin: 8px 0 0; color: var(--muted); font-size: 14px; }
+      .grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 16px; }
+      @media (min-width: 860px) { .grid { grid-template-columns: 1fr 1fr; } }
+      .card {
+        padding: 16px 16px 14px;
+        border-radius: 18px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+      }
+      .h { margin: 0 0 10px; font-size: 16px; font-weight: 800; display: flex; gap: 10px; align-items: center; }
+      .dot { width: 10px; height: 10px; border-radius: 999px; background: var(--primary); box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.12); }
+      .p { margin: 0; color: var(--muted); font-size: 14px; }
+      .list { margin: 10px 0 0; padding-left: 18px; color: var(--muted); font-size: 14px; }
+      .list li { margin: 6px 0; }
+      .foot {
+        margin-top: 18px;
+        color: var(--muted);
+        font-size: 12px;
+        text-align: center;
+      }
+      code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+        font-size: 0.95em;
+        padding: 0.08em 0.35em;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: rgba(127, 127, 127, 0.10);
+        color: var(--text);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="hero">
+        <h1 class="title">关于 AI百宝箱</h1>
+        <p class="subtitle">
+          AI百宝箱是一款 AI 工具信息整理与导航应用：支持分类浏览、关键词搜索、本地收藏，并可在应用内打开第三方网站进行访问。
+        </p>
+      </div>
+
+      <div class="grid">
+        <section class="card">
+          <h2 class="h"><span class="dot"></span>产品定位与功能</h2>
+          <p class="p">本应用提供 AI 工具目录与信息展示，帮助用户快速发现与访问工具官网或相关页面。</p>
+          <ul class="list">
+            <li>分类发现：按类别浏览工具。</li>
+            <li>关键词搜索：支持按名称 / 描述 / 分类检索。</li>
+            <li>收藏管理：将常用工具保存在本机收藏列表。</li>
+            <li>应用内访问：在应用内网页视图中打开第三方链接。</li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2 class="h"><span class="dot"></span>数据来源与更新</h2>
+          <p class="p">
+            本应用内展示的信息来自公开渠道的整理与汇总，并以内嵌数据的形式提供基础目录能力；
+            当你点击“打开/访问”时，会跳转至第三方网站。
+          </p>
+          <ul class="list">
+            <li>目录数据：用于展示分类、工具条目与简介（可能随版本更新而变化）。</li>
+            <li>第三方内容：由对应网站/服务提供方负责维护与解释。</li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2 class="h"><span class="dot"></span>隐私与数据处理</h2>
+          <p class="p">我们尽量以“少收集”为原则，默认不要求你提供个人身份信息。</p>
+          <ul class="list">
+            <li>本地收藏：收藏状态保存在你的设备本地，用于在应用内展示。</li>
+            <li>网络访问：打开第三方网站时，相关请求由第三方站点处理并可能产生其自己的日志与 Cookie。</li>
+            <li>不出售数据：我们不向第三方出售你的个人信息。</li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2 class="h"><span class="dot"></span>免责声明</h2>
+          <ul class="list">
+            <li>本应用为第三方信息整理与导航工具，不对第三方网站/服务的内容、可用性、安全性、合规性作出保证。</li>
+            <li>你在第三方网站上的任何注册、付费、下载、交易或使用行为，均受其服务条款与隐私政策约束。</li>
+            <li>如因第三方服务变更导致链接失效或信息不准确，我们会在后续版本中尽力更新，但不承担由此产生的直接或间接损失。</li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2 class="h"><span class="dot"></span>版权与商标</h2>
+          <p class="p">
+            应用内出现的产品名称、商标、Logo 与图片等，相关权利归其各自权利人所有；
+            如有侵权或不当使用，请联系我们处理。
+          </p>
+        </section>
+
+        <section class="card">
+          <h2 class="h"><span class="dot"></span>联系我们</h2>
+          <p class="p">
+            反馈问题、提出建议或进行版权/合规沟通，请发送邮件至：
+          </p>
+          <p class="p" style="margin-top:10px">
+            <a href="mailto:super_soft@outlook.com">super_soft@outlook.com</a>
+          </p>
+          <p class="p" style="margin-top:10px">
+            为了更快处理，请在邮件标题中注明 <code>AI百宝箱</code>。
+          </p>
+        </section>
+      </div>
+
+      <div class="foot">
+        本页面用于应用内“关于/合规”展示，内容可能随版本更新而调整。
+      </div>
+    </div>
+  </body>
+</html>
