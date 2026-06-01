@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="宝贝积分 App 隐私政策" />
+  <title>宝贝积分 - 隐私政策</title>
+  <style>
+    :root {
+      --text: #1a1a1a;
+      --muted: #555;
+      --border: #e0e0e0;
+      --bg: #fafafa;
+      --accent: #1565c0;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--bg);
+    }
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 32px 20px 48px;
+      background: #fff;
+      min-height: 100vh;
+    }
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+      margin-bottom: 28px;
+    }
+    h1 {
+      font-size: 1.75rem;
+      margin: 0 0 8px;
+      font-weight: 700;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .contact-email {
+      font-weight: 600;
+      color: var(--accent);
+    }
+    h2 {
+      font-size: 1.15rem;
+      margin: 28px 0 12px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    h3 {
+      font-size: 1rem;
+      margin: 20px 0 10px;
+      font-weight: 600;
+    }
+    p { margin: 0 0 12px; }
+    ul {
+      margin: 0 0 12px;
+      padding-left: 1.25em;
+    }
+    li { margin-bottom: 6px; }
+    strong { font-weight: 600; }
+    a { color: var(--accent); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      margin: 12px 0 20px;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f5f5f5;
+      font-weight: 600;
+      width: 28%;
+    }
+    .notice {
+      background: #e3f2fd;
+      border-left: 4px solid var(--accent);
+      padding: 12px 14px;
+      margin: 16px 0;
+      font-size: 0.95rem;
+    }
+    footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <article class="wrap">
+    <header>
+      <h1>宝贝积分 隐私政策</h1>
+      <p class="meta">应用名称：宝贝积分 · 最后更新：2026年5月</p>
+      <p class="meta">联系邮箱：<a class="contact-email" href="mailto:super_soft@outlook.com">super_soft@outlook.com</a></p>
+    </header>
+
+    <section id="intro">
+      <h2>引言</h2>
+      <p>「宝贝积分」（以下简称「本应用」）重视您的个人信息保护。本《隐私政策》说明我们如何收集、使用、存储、共享与保护您的个人信息，以及您享有的权利。</p>
+      <p>本应用主要面向家长或监护人，用于家庭场景下的积分与任务管理。请您在监护人陪同下阅读本政策；若您不同意本政策，请勿使用本应用。</p>
+    </section>
+
+    <section id="direct">
+      <h2>一、我们直接收集的信息</h2>
+      <p>本应用以设备本地存储为主，不要求注册账号。我们可能处理的信息包括：</p>
+      <ul>
+        <li>您主动录入的孩子昵称、头像（本地照片）、积分与任务记录；</li>
+        <li>您开启的功能所产生的本地备份文件（如适用）；</li>
+        <li>您通过系统权限提供的相机、相册、通知等能力所涉及的数据（均在设备本地或按系统规则处理）。</li>
+      </ul>
+      <p>除为实现您主动选择的备份、分享等功能外，我们不会将上述子女信息上传至我们的自有服务器。</p>
+    </section>
+
+    <section id="sdk">
+      <h2>二、设备标识与第三方 SDK</h2>
+      <div class="notice">
+        为保障服务稳定、统计使用情况、展示开屏广告并满足合规要求，本应用在您点击「同意」《隐私政策》后，才会初始化下列第三方 SDK。相关 SDK 可能收集设备信息，其中包括 <strong>Android ID</strong>（安卓设备标识符）。
+      </div>
+      <p>我们要求第三方在合法、正当、必要范围内处理信息。下列说明收集<strong>目的、方式与范围</strong>（具体以 SDK 提供方最新公示为准）。</p>
+      <p><strong>说明：</strong>下列 Android ID 相关说明主要适用于安卓版本；iOS 版本在您同意后亦可能初始化友盟统计 SDK，可能收集 IDFA 等设备标识（以 SDK 实际采集为准）。</p>
+
+      <h3>2.1 友盟+ 移动统计 SDK（U-App）</h3>
+      <table>
+        <tr><th>SDK 名称</th><td>友盟 SDK（友盟+ 移动统计）</td></tr>
+        <tr><th>服务类型</th><td>应用统计分析、性能与崩溃分析</td></tr>
+        <tr><th>运营方</th><td>友盟同欣（北京）科技有限公司 / 北京锐讯灵通科技有限公司（以友盟公示为准）</td></tr>
+        <tr><th>第三方隐私政策</th><td><a href="https://www.umeng.com/page/policy" rel="noopener noreferrer">https://www.umeng.com/page/policy</a></td></tr>
+        <tr><th>收集的个人信息类型</th><td>
+          <strong>Android ID</strong>（安卓设备标识，用于统计去重）；设备型号、操作系统版本、屏幕分辨率；网络类型（如 Wi-Fi/蜂窝）；应用版本、渠道信息；其他友盟文档列明的设备标识（如 OAID 等，以 SDK 实际采集为准）。
+        </td></tr>
+        <tr><th>收集目的</th><td>统计应用启动、功能使用与稳定性，改进产品体验；进行反作弊与数据校验。</td></tr>
+        <tr><th>收集方式</th><td>SDK 在您同意本政策后自动采集，并通过加密等方式传输至友盟服务器。</td></tr>
+        <tr><th>使用范围</th><td>用于聚合统计分析，不用于向您推送商业广告（统计 SDK 与广告 SDK 相互独立）。</td></tr>
+        <tr><th>初始化时机</th><td>仅在您同意《隐私政策》后初始化。</td></tr>
+      </table>
+
+      <h3>2.2 友盟+ 智能营销 SDK（U-AppWin 开屏广告）</h3>
+      <table>
+        <tr><th>SDK 名称</th><td>友盟 SDK（友盟+ 智能营销 / 开屏广告）</td></tr>
+        <tr><th>服务类型</th><td>开屏广告展示、广告效果统计</td></tr>
+        <tr><th>运营方</th><td>同上（以友盟公示为准）</td></tr>
+        <tr><th>第三方隐私政策</th><td><a href="https://www.umeng.com/page/policy" rel="noopener noreferrer">https://www.umeng.com/page/policy</a></td></tr>
+        <tr><th>收集的个人信息类型</th><td>
+          <strong>Android ID</strong>（安卓设备标识，用于广告投放与效果统计）；设备型号、操作系统版本；网络状态、IP 地址（用于广告请求与反作弊）；广告展示、点击等行为数据；其他广告 SDK 文档列明的信息（以 SDK 实际采集为准）。
+        </td></tr>
+        <tr><th>收集目的</th><td>展示开屏广告、衡量广告效果、防止作弊与异常流量。</td></tr>
+        <tr><th>收集方式</th><td>SDK 在您同意本政策后自动采集；冷启动时可能请求广告素材。</td></tr>
+        <tr><th>使用范围</th><td>用于广告联盟相关业务，不向无关第三方出售您的个人信息。</td></tr>
+        <tr><th>初始化与展示时机</th><td>仅在您同意《隐私政策》后初始化；冷启动时可能展示开屏广告，您可等待结束或按界面提示跳过。</td></tr>
+      </table>
+    </section>
+
+    <section id="permissions">
+      <h2>三、系统权限</h2>
+      <p>为实现功能，本应用可能申请以下权限（以实际系统为准）：</p>
+      <ul>
+        <li><strong>相机 / 相册 / 媒体</strong>：设置孩子头像、选择图片；</li>
+        <li><strong>通知</strong>：任务提醒；</li>
+        <li><strong>存储 / 媒体访问</strong>：本地备份与文件导入导出；</li>
+        <li><strong>网络</strong>：连接应用商店、加载隐私政策、SDK 联网统计与广告。</li>
+      </ul>
+      <p>您可在系统「设置」中随时关闭权限；关闭后相关功能可能不可用。</p>
+    </section>
+
+    <section id="storage">
+      <h2>四、信息的存储与保留</h2>
+      <ul>
+        <li>您录入的业务数据默认保存在本设备，卸载应用可能被清除；</li>
+        <li>第三方 SDK 在其服务器上的保留期限以其隐私政策为准；</li>
+        <li>我们不会在境内服务器长期存储您孩子的积分明细，除非您主动使用需联网的备份能力（如 iOS iCloud，以平台为准）。</li>
+      </ul>
+    </section>
+
+    <section id="share">
+      <h2>五、信息共享与对外提供</h2>
+      <p>我们不会出售您的个人信息。仅在以下情形可能共享：</p>
+      <ul>
+        <li>经您明确同意；</li>
+        <li>为履行法律法规义务、司法或行政要求；</li>
+        <li>与上列第三方 SDK 服务提供方共享为实现功能所必要的信息。</li>
+      </ul>
+      <p>安卓版本集成友盟统计与广告 SDK，故可能向友盟提供含 <strong>Android ID</strong> 在内的设备信息。</p>
+    </section>
+
+    <section id="rights">
+      <h2>六、您的权利</h2>
+      <p>您有权：</p>
+      <ul>
+        <li>查询、更正、删除本设备上的本地数据（通过应用内功能或卸载应用）；</li>
+        <li>撤回同意：安卓首次启动可选择「暂不同意」并退出；已同意后可在系统设置中清除应用数据并重新选择；</li>
+        <li>限制追踪：在系统设置中管理广告标识与权限；</li>
+        <li>就第三方 SDK 处理信息向友盟行使权利，参见其官网隐私政策。</li>
+      </ul>
+      <p>如您对本政策有疑问，请发送邮件至 <a href="mailto:super_soft@outlook.com">super_soft@outlook.com</a>，我们将在合理期限内回复。</p>
+    </section>
+
+    <section id="children">
+      <h2>七、未成年人保护</h2>
+      <p>本应用供监护人管理未成年人日常记录之用。请监护人指导未成年人使用，并妥善保管设备与权限。我们不会主动要求儿童提供超出功能所需的个人信息。</p>
+    </section>
+
+    <section id="updates">
+      <h2>八、政策更新</h2>
+      <p>我们可能适时修订本政策，并通过应用内提示或更新版本说明。重大变更将再次征求您的同意（如法律法规要求）。请您定期查阅本政策。</p>
+    </section>
+
+    <section id="contact">
+      <h2>九、联系我们</h2>
+      <p>应用名称：宝贝积分</p>
+      <p>联系邮箱：<a href="mailto:super_soft@outlook.com">super_soft@outlook.com</a></p>
+      <p>如您对本隐私政策或个人信息处理（含 Android ID、第三方 SDK 等）有任何问题、意见或投诉，请发送邮件至上述邮箱与我们联系。</p>
+    </section>
+
+    <footer>
+      <p>本页面内容与「宝贝积分」应用内《隐私政策》保持一致，供应用商店审核与用户查阅。</p>
+    </footer>
+  </article>
+</body>
+</html>
