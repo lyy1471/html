@@ -104,7 +104,7 @@
   <article class="wrap">
     <header>
       <h1>宝贝积分 隐私政策</h1>
-      <p class="meta">应用名称：宝贝积分 · 最后更新：2026年5月</p>
+      <p class="meta">应用名称：宝贝积分 · 最后更新：2026年6月</p>
       <p class="meta">联系邮箱：<a class="contact-email" href="mailto:super_soft@outlook.com">super_soft@outlook.com</a></p>
     </header>
 
@@ -120,18 +120,18 @@
       <ul>
         <li>您主动录入的孩子昵称、头像（本地照片）、积分与任务记录；</li>
         <li>您开启的功能所产生的本地备份文件（如适用）；</li>
-        <li>您通过系统权限提供的相机、相册、通知等能力所涉及的数据（均在设备本地或按系统规则处理）。</li>
+        <li>您通过系统权限提供的相册、通知等能力所涉及的数据（均在设备本地或按系统规则处理）。</li>
       </ul>
-      <p>除为实现您主动选择的备份、分享等功能外，我们不会将上述子女信息上传至我们的自有服务器。</p>
+      <p>除为实现您主动选择的备份、分享等功能外，我们不会将上述子女信息上传至我们自有的服务器。在安卓版本，若您已购买高级版并主动使用「云存储备份」，您录入的积分与任务等数据经压缩编码后，将上传至华为 AppGallery Connect 云存储（由华为提供托管，详见下文 2.4）。</p>
     </section>
 
     <section id="sdk">
       <h2>二、设备标识与第三方 SDK</h2>
       <div class="notice">
-        为保障服务稳定、统计使用情况、展示开屏广告并满足合规要求，本应用在您点击「同意」《隐私政策》后，才会初始化下列第三方 SDK。相关 SDK 可能收集设备信息，其中包括 <strong>Android ID</strong>（安卓设备标识符）。
+        为保障服务稳定、统计使用情况、展示开屏广告、提供安卓高级版购买与云备份，并满足合规要求，本应用在您点击「同意」《隐私政策》后，才会初始化下列第三方 SDK 或华为云服务组件。相关 SDK 可能收集设备信息，其中包括 <strong>Android ID</strong>（安卓设备标识符）。
       </div>
       <p>我们要求第三方在合法、正当、必要范围内处理信息。下列说明收集<strong>目的、方式与范围</strong>（具体以 SDK 提供方最新公示为准）。</p>
-      <p><strong>说明：</strong>下列 Android ID 相关说明主要适用于安卓版本；iOS 版本在您同意后亦可能初始化友盟统计 SDK，可能收集 IDFA 等设备标识（以 SDK 实际采集为准）。</p>
+      <p><strong>说明：</strong>下列 Android ID 相关说明主要适用于安卓版本；华为 IAP / AGC 组件仅适用于安卓版本；iOS 版本在您同意后亦可能初始化友盟统计 SDK，可能收集 IDFA 等设备标识（以 SDK 实际采集为准）。</p>
 
       <h3>2.1 友盟+ 移动统计 SDK（U-App）</h3>
       <table>
@@ -162,17 +162,42 @@
         <tr><th>使用范围</th><td>用于广告联盟相关业务，不向无关第三方出售您的个人信息。</td></tr>
         <tr><th>初始化与展示时机</th><td>仅在您同意《隐私政策》后初始化；冷启动时可能展示开屏广告，您可等待结束或按界面提示跳过。</td></tr>
       </table>
+
+      <h3>2.3 华为 HMS 应用内支付 SDK（仅 Android）</h3>
+      <table>
+        <tr><th>SDK / 服务名称</th><td>华为 HMS Core 应用内支付（IAP）</td></tr>
+        <tr><th>服务类型</th><td>安卓高级版一次性购买、订单校验与恢复购买</td></tr>
+        <tr><th>运营方</th><td>华为软件技术有限公司（以华为公示为准）</td></tr>
+        <tr><th>第三方说明</th><td><a href="https://developer.huawei.com/consumer/cn/doc/HMSCore-Guides/sdk-data-security-0000001050040893" rel="noopener noreferrer">HMS Core 数据安全说明</a></td></tr>
+        <tr><th>可能涉及的信息</th><td>华为账号下的订单与购买状态；设备型号、系统版本、应用包名与版本；网络状态。</td></tr>
+        <tr><th>收集目的</th><td>完成应用内购买、校验权益、恢复已购商品。</td></tr>
+        <tr><th>收集方式</th><td>在您进入购买页、发起购买或恢复购买时，通过华为 SDK 与华为服务器交互。</td></tr>
+        <tr><th>初始化时机</th><td>在您使用购买、恢复购买或相关权益校验功能时调用。</td></tr>
+      </table>
+
+      <h3>2.4 华为 AppGallery Connect 认证与云存储（仅 Android）</h3>
+      <table>
+        <tr><th>SDK / 服务名称</th><td>华为 AppGallery Connect 认证服务、云存储</td></tr>
+        <tr><th>服务类型</th><td>匿名登录标识、高级版用户数据云备份与恢复</td></tr>
+        <tr><th>运营方</th><td>华为软件技术有限公司（以华为公示为准）</td></tr>
+        <tr><th>第三方说明</th><td><a href="https://developer.huawei.com/consumer/cn/doc/development/AppGallery-connect-Guides/agc-privacy-introduction-0000001058769501" rel="noopener noreferrer">AGC 隐私说明</a></td></tr>
+        <tr><th>可能涉及的信息</th><td>AGC 匿名用户标识；您主动上传的备份文件（含孩子昵称、积分与任务等业务数据，经 gzip 压缩与 Base64 编码）；与已购商品关联的备份目录标识（哈希值）。</td></tr>
+        <tr><th>收集目的</th><td>保存您主动发起的云备份，并在换机或重装后恢复。</td></tr>
+        <tr><th>收集方式</th><td>同意本政策后可能预热匿名登录；实际上传仅在您点击备份或开启自动云备份时发生。</td></tr>
+        <tr><th>存储与删除</th><td>数据存储于华为云存储；可在应用内删除备份或联系我们协助处理。</td></tr>
+      </table>
     </section>
 
     <section id="permissions">
       <h2>三、系统权限</h2>
       <p>为实现功能，本应用可能申请以下权限（以实际系统为准）：</p>
       <ul>
-        <li><strong>相机 / 相册 / 媒体</strong>：设置孩子头像、选择图片；</li>
+        <li><strong>相册 / 媒体</strong>：为孩子选择头像图片（仅相册，不使用相机拍摄）；</li>
         <li><strong>通知</strong>：任务提醒；</li>
         <li><strong>存储 / 媒体访问</strong>：本地备份与文件导入导出；</li>
-        <li><strong>网络</strong>：连接应用商店、加载隐私政策、SDK 联网统计与广告。</li>
+        <li><strong>网络</strong>：连接应用商店与华为云服务、加载隐私政策、SDK 联网统计与广告。</li>
       </ul>
+      <p>华为 IAP 与 AGC 云存储依赖网络连通，由 HMS Core 等系统组件提供能力，<strong>不额外申请</strong>与支付或云存储相关的敏感设备权限。</p>
       <p>您可在系统「设置」中随时关闭权限；关闭后相关功能可能不可用。</p>
     </section>
 
@@ -181,7 +206,9 @@
       <ul>
         <li>您录入的业务数据默认保存在本设备，卸载应用可能被清除；</li>
         <li>第三方 SDK 在其服务器上的保留期限以其隐私政策为准；</li>
-        <li>我们不会在境内服务器长期存储您孩子的积分明细，除非您主动使用需联网的备份能力（如 iOS iCloud，以平台为准）。</li>
+        <li>我们不会在自有服务器长期存储您孩子的积分明细；</li>
+        <li>iOS：若您主动使用 iCloud 备份，数据按 Apple iCloud 规则存储；</li>
+        <li>Android：若您已购买高级版并主动使用云存储备份，备份文件存储于华为 AppGallery Connect 云存储，卸载应用不会自动删除云端备份，您可在应用内删除或联系我们。</li>
       </ul>
     </section>
 
@@ -193,7 +220,7 @@
         <li>为履行法律法规义务、司法或行政要求；</li>
         <li>与上列第三方 SDK 服务提供方共享为实现功能所必要的信息。</li>
       </ul>
-      <p>安卓版本集成友盟统计与广告 SDK，故可能向友盟提供含 <strong>Android ID</strong> 在内的设备信息。</p>
+      <p>安卓版本集成友盟统计与广告 SDK，故可能向友盟提供含 <strong>Android ID</strong> 在内的设备信息；在您使用高级版购买、云备份时，还可能向华为提供订单校验、匿名标识及您主动上传的备份数据（以实现对应功能所必要为限）。</p>
     </section>
 
     <section id="rights">
@@ -203,7 +230,8 @@
         <li>查询、更正、删除本设备上的本地数据（通过应用内功能或卸载应用）；</li>
         <li>撤回同意：安卓首次启动可选择「暂不同意」并退出；已同意后可在系统设置中清除应用数据并重新选择；</li>
         <li>限制追踪：在系统设置中管理广告标识与权限；</li>
-        <li>就第三方 SDK 处理信息向友盟行使权利，参见其官网隐私政策。</li>
+        <li>就第三方 SDK 处理信息向友盟或华为行使权利，参见其官网隐私政策；</li>
+        <li>删除云端备份：可在应用内「设置」删除云存储备份，或通过邮件联系我们。</li>
       </ul>
       <p>如您对本政策有疑问，请发送邮件至 <a href="mailto:super_soft@outlook.com">super_soft@outlook.com</a>，我们将在合理期限内回复。</p>
     </section>
