@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SyncFlow - 技术支持</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .section h3 {
+            color: #555;
+            font-size: 1.3em;
+            margin-top: 25px;
+            margin-bottom: 12px;
+        }
+        
+        .section p {
+            margin-bottom: 15px;
+            color: #666;
+            font-size: 1.05em;
+        }
+        
+        .contact-box {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            text-align: center;
+            border: 2px solid #667eea;
+        }
+        
+        .contact-box h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        
+        .contact-box a {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: 600;
+            display: inline-block;
+            padding: 10px 20px;
+            background: white;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-box a:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        
+        .faq-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .faq-item h3 {
+            color: #667eea;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .feature-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #666;
+        }
+        
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 20px 30px;
+            text-align: center;
+            color: #999;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .section h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔄 SyncFlow</h1>
+            <p>跨设备数据同步工具 - 技术支持</p>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>📧 联系我们</h2>
+                <div class="contact-box">
+                    <h3>需要帮助？</h3>
+                    <p>如果您在使用过程中遇到任何问题，或有任何建议和反馈，欢迎通过以下方式联系我们：</p>
+                    <a href="mailto:super_soft@outlook.com">super_soft@outlook.com</a>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>✨ 应用功能</h2>
+                <p>SyncFlow 是一款强大的跨设备数据同步工具，主要功能包括：</p>
+                <ul class="feature-list">
+                    <li><strong>剪切板同步</strong> - 实时同步文本内容到所有连接的设备</li>
+                    <li><strong>文件共享</strong> - 轻松在设备间传输文件，支持大文件流式传输</li>
+                    <li><strong>屏幕投屏</strong> - 将设备屏幕实时投屏到Web端，支持多平台</li>
+                    <li><strong>智能下载</strong> - 优化的下载管理，支持进度跟踪和断点续传</li>
+                    <li><strong>局域网服务</strong> - 内置HTTP服务器，无需互联网即可使用</li>
+                    <li><strong>多语言支持</strong> - 支持多种语言界面</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>❓ 常见问题</h2>
+                
+                <div class="faq-item">
+                    <h3>如何连接设备？</h3>
+                    <p>确保所有设备连接到同一个WiFi网络。打开应用后，使用应用生成的二维码或访问地址即可连接。您可以在应用首页看到服务器地址和二维码。</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>文件传输失败怎么办？</h3>
+                    <p>请检查以下几点：</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>确保所有设备在同一局域网内</li>
+                        <li>检查防火墙设置，确保允许应用访问网络</li>
+                        <li>确认服务器已正常启动（应用首页显示"运行中"）</li>
+                        <li>尝试重启应用或重新连接</li>
+                    </ul>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>剪切板同步不工作？</h3>
+                    <p>请确保：</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>应用已获得必要的权限</li>
+                        <li>设备已成功连接到服务器</li>
+                        <li>Web端或另一设备已打开并连接</li>
+                    </ul>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>屏幕投屏功能如何使用？</h3>
+                    <p>在iOS设备上，点击投屏按钮后会弹出系统屏幕录制选择器，选择"SyncFlow Broadcast"即可开始投屏。投屏内容会实时显示在Web端。Android设备使用系统级屏幕录制功能。</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>数据安全吗？</h3>
+                    <p>所有数据仅在本地网络传输，不会上传到任何服务器。应用不会收集、存储或分享您的个人数据。所有文件和数据都保留在您的设备上。</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>支持哪些平台？</h3>
+                    <p>SyncFlow 支持 iOS、Android、macOS、Windows 和 Linux 平台。Web端可以通过任何现代浏览器访问。</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>🔒 隐私说明</h2>
+                <p>SyncFlow 非常重视您的隐私：</p>
+                <ul class="feature-list">
+                    <li>所有数据仅在本地网络传输，不上传到任何服务器</li>
+                    <li>不会收集、存储或分享您的个人数据</li>
+                    <li>不需要注册账号或登录</li>
+                    <li>所有文件和数据都保留在您的设备上</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 SyncFlow. All rights reserved.</p>
+            <p>感谢您使用 SyncFlow！</p>
+        </div>
+    </div>
+</body>
+</html>
+
