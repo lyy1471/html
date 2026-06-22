@@ -68,119 +68,236 @@
       font-size: 13px;
       color: #999;
     }
+    .highlight-box {
+      background: #f0f7ff;
+      border-left: 4px solid #3b82f6;
+      padding: 12px 16px;
+      margin: 16px 0;
+      border-radius: 4px;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>SyncFlow 隐私政策</h1>
-    <p class="meta">更新日期：2026 年 6 月 15 日 &nbsp;|&nbsp; 生效日期：2026 年 6 月 15 日</p>
+    <p class="meta">更新日期：2026 年 6 月 23 日 &nbsp;|&nbsp; 生效日期：2026 年 6 月 23 日</p>
 
-    <p>SyncFlow（以下简称"本应用"）尊重并保护您的个人信息。本政策将说明我们如何收集、使用和保护您的信息。</p>
-    <p><strong>请您在使用本应用前仔细阅读并理解本隐私政策。如您不同意，请停止使用。继续使用即表示您已同意本政策。</strong></p>
+    <p>SyncFlow（以下简称"本应用"）由<strong>SyncFlow 开发团队</strong>（以下简称"我们"）开发并运营。我们深知个人信息对您的重要性，并将按照法律法规要求，采取相应的安全保护措施，尽力保护您的个人信息安全可控。</p>
+    <p><strong>请您在使用本应用前仔细阅读并充分理解本隐私政策。如您不同意本政策的任何内容，请立即停止使用本应用。继续使用即表示您已充分理解并同意本政策的全部内容。</strong></p>
 
-    <!-- ==================== 一、直接收集的信息 ==================== -->
-    <h2>一、我们直接收集的信息</h2>
-    <p>本应用仅在您主动使用时收集以下信息，且<strong>一般不上传至远程服务器</strong>：</p>
+    <!-- ==================== 一、我们如何收集和使用您的个人信息 ==================== -->
+    <h2>一、我们如何收集和使用您的个人信息</h2>
+    <p>本应用仅在您主动使用对应功能时收集必要信息，<strong>核心数据仅在局域网内传输，不会上传至任何远程服务器</strong>：</p>
+
+    <h3>1.1 设备发现与连接</h3>
     <ul>
-      <li>设备名称及 IP 地址——用于局域网内设备发现与数据传输；</li>
-      <li>文件内容及元数据——仅在您主动选择传输文件时读取，传输完成后自动清理临时缓存；</li>
-      <li>剪切板内容——仅在您启用剪切板同步功能时读取；</li>
-      <li>应用配置与购买状态——仅存储在您的设备本地。</li>
+      <li><strong>收集信息：</strong>设备名称、IP 地址、局域网广播地址</li>
+      <li><strong>使用目的：</strong>在局域网内发现其他安装本应用的设备并建立数据传输连接</li>
+      <li><strong>使用范围：</strong>仅在您的局域网内使用，不对外传输</li>
+    </ul>
+
+    <h3>1.2 文件传输</h3>
+    <ul>
+      <li><strong>收集信息：</strong>文件内容、文件名、文件大小、MIME 类型</li>
+      <li><strong>使用目的：</strong>在您主动选择并确认后，在局域网设备间传输文件</li>
+      <li><strong>使用范围：</strong>传输完成后临时缓存自动清理，数据不会上传至远程服务器</li>
+    </ul>
+
+    <h3>1.3 剪切板同步</h3>
+    <ul>
+      <li><strong>收集信息：</strong>剪切板文本内容</li>
+      <li><strong>使用目的：</strong>仅在您启用剪切板同步功能后，在局域网设备间同步剪切板内容</li>
+      <li><strong>使用范围：</strong>仅局域网内同步，默认关闭</li>
+    </ul>
+
+    <h3>1.4 屏幕投屏</h3>
+    <ul>
+      <li><strong>收集信息：</strong>屏幕图像数据</li>
+      <li><strong>使用目的：</strong>在您主动开启投屏功能后，将屏幕内容传输至局域网内其他设备</li>
+      <li><strong>使用范围：</strong>仅在投屏会话期间使用，停止后立即清除</li>
+    </ul>
+
+    <h3>1.5 应用配置与购买状态</h3>
+    <ul>
+      <li><strong>收集信息：</strong>主题偏好、语言设置、端口配置、购买状态</li>
+      <li><strong>使用目的：</strong>保存您的应用使用偏好和购买信息</li>
+      <li><strong>存储位置：</strong>仅存储在您的设备本地，使用系统级加密存储</li>
     </ul>
 
     <!-- ==================== 二、设备标识与第三方 SDK ==================== -->
     <h2>二、设备标识与第三方 SDK</h2>
-    <p>为保障应用功能实现，我们集成了以下第三方 SDK。这些 SDK 可能因功能需要收集您的设备标识符等信息。</p>
+    <p>为保障应用功能实现和统计分析，我们集成了以下第三方 SDK。这些 SDK 可能因功能需要收集您的部分设备信息。</p>
+
+    <div class="highlight-box">
+      <p><strong>重要提示：</strong>以下第三方 SDK 均<strong>仅在您同意本隐私政策后才会初始化</strong>，未同意前不会收集任何信息。</p>
+    </div>
 
     <h3>2.1 友盟+ 移动统计 SDK</h3>
     <ul>
+      <li><strong>SDK 名称：</strong>友盟+ 移动统计 SDK（UMeng Analytics）</li>
       <li><strong>服务商：</strong>友盟同欣（北京）科技有限公司</li>
-      <li><strong>使用目的：</strong>应用使用情况统计分析</li>
-      <li><strong>收集信息：</strong>设备标识符（IMEI/Android ID/IDFA/OPENUDID/GUID）、MAC 地址、IP 地址、启动次数、页面访问时长等</li>
+      <li><strong>使用目的：</strong>应用使用情况统计分析、崩溃分析</li>
+      <li><strong>收集信息类型：</strong>设备标识符（IMEI/Android ID/IDFA/OPENUDID/GUID）、MAC 地址、IP 地址、设备型号、操作系统版本、应用启动次数、页面访问时长、应用崩溃日志</li>
+      <li><strong>收集方式：</strong>SDK 自动采集</li>
       <li><strong>隐私政策：</strong><a href="https://www.umeng.com/page/policy" target="_blank">https://www.umeng.com/page/policy</a></li>
     </ul>
 
-    <h3>2.2 友盟+ 开屏广告 SDK（仅 Android）</h3>
+    <h3>2.2 友盟+ 开屏广告 SDK</h3>
     <ul>
+      <li><strong>SDK 名称：</strong>友盟+ U-AppWin 开屏广告 SDK</li>
       <li><strong>服务商：</strong>友盟同欣（北京）科技有限公司</li>
-      <li><strong>使用目的：</strong>开屏广告展示（非付费用户）</li>
-      <li><strong>收集信息：</strong>设备标识符（OAID/GAID）、设备型号、操作系统版本</li>
+      <li><strong>使用目的：</strong>开屏广告展示（仅面向非付费用户）</li>
+      <li><strong>收集信息类型：</strong>设备标识符（OAID/GAID）、设备型号、操作系统版本、屏幕尺寸</li>
+      <li><strong>收集方式：</strong>SDK 自动采集</li>
       <li><strong>隐私政策：</strong><a href="https://www.umeng.com/page/policy" target="_blank">https://www.umeng.com/page/policy</a></li>
     </ul>
-    <p>购买高级版（一次性付费）后将永久停止所有广告展示。iOS 版本不包含广告。</p>
+    <p>购买高级版（一次性付费）后将永久停止所有广告展示。</p>
 
     <h3>2.3 华为 HMS 应用内支付 SDK（仅 Android）</h3>
     <ul>
+      <li><strong>SDK 名称：</strong>华为 HMS In-App Purchases SDK（HMS IAP Kit）</li>
       <li><strong>服务商：</strong>华为软件技术有限公司</li>
-      <li><strong>使用目的：</strong>处理高级版应用内购买</li>
-      <li><strong>收集信息：</strong>订单信息、购买状态、设备标识符</li>
+      <li><strong>使用目的：</strong>处理高级版应用内购买、验证购买状态、恢复购买</li>
+      <li><strong>收集信息类型：</strong>订单信息、购买状态、设备标识符、华为账号 ID</li>
+      <li><strong>收集方式：</strong>SDK 自动采集（仅在发起购买流程时）</li>
       <li><strong>隐私政策：</strong><a href="https://consumer.huawei.com/cn/privacy/privacy-policy/" target="_blank">https://consumer.huawei.com/cn/privacy/privacy-policy/</a></li>
     </ul>
 
-    <!-- ==================== 三、系统权限 ==================== -->
-    <h2>三、系统权限</h2>
+    <h3>2.4 华为 AGC 基础服务 SDK（仅 Android）</h3>
     <ul>
-      <li><strong>网络权限：</strong>局域网设备发现和数据传输；</li>
-      <li><strong>存储权限：</strong>文件选择和保存到设备；</li>
-      <li><strong>相机权限：</strong>扫描二维码以快速连接设备；</li>
-      <li><strong>屏幕录制权限：</strong>屏幕投屏功能。</li>
-    </ul>
-    <p>您可在设备设置中随时管理上述权限。关闭权限可能影响对应功能，但不会影响应用其他功能的使用。</p>
-
-    <!-- ==================== 四、信息的存储与保留 ==================== -->
-    <h2>四、信息的存储与保留</h2>
-    <ul>
-      <li>应用配置、购买状态等数据仅存储在您的设备本地。</li>
-      <li>文件传输过程中的临时缓存文件在传输完成后自动清理。</li>
-      <li>文件及剪切板数据仅在局域网内传输，不会上传至远程服务器。</li>
-      <li>敏感配置信息（如购买状态）使用系统级加密存储（Android EncryptedSharedPreferences / iOS Keychain）。</li>
+      <li><strong>SDK 名称：</strong>华为 AppGallery Connect Core SDK</li>
+      <li><strong>服务商：</strong>华为软件技术有限公司</li>
+      <li><strong>使用目的：</strong>提供华为应用市场基础服务（应用内支付依赖项、应用使用情况统计分析）</li>
+      <li><strong>收集信息类型：</strong>应用信息（包名、版本号）、设备标识符（OAID/AAID）、应用使用数据（启动次数、页面访问、操作行为）</li>
+      <li><strong>收集方式：</strong>SDK 自动采集</li>
+      <li><strong>隐私政策：</strong><a href="https://consumer.huawei.com/cn/privacy/privacy-policy/" target="_blank">https://consumer.huawei.com/cn/privacy/privacy-policy/</a></li>
     </ul>
 
-    <!-- ==================== 五、信息共享与对外提供 ==================== -->
-    <h2>五、信息共享与对外提供</h2>
+    <h3>2.5 华为 AppGallery 版本更新 SDK（仅 Android）</h3>
     <ul>
-      <li>我们不会向第三方出售您的个人信息。</li>
-      <li>文件、剪切板内容等核心数据不会上传至远程服务器，亦不会分享给任何第三方。</li>
-      <li>仅在以下情形共享必要信息：提供上述第三方 SDK 服务；法律法规或行政/司法机关要求；保护人身及财产安全所必需。</li>
+      <li><strong>SDK 名称：</strong>华为 AppGallery Kit（HMS AppService）</li>
+      <li><strong>服务商：</strong>华为软件技术有限公司</li>
+      <li><strong>使用目的：</strong>检测应用新版本并在应用市场内引导更新</li>
+      <li><strong>收集信息类型：</strong>应用包名、当前版本号、设备标识符</li>
+      <li><strong>收集方式：</strong>SDK 自动采集</li>
+      <li><strong>隐私政策：</strong><a href="https://consumer.huawei.com/cn/privacy/privacy-policy/" target="_blank">https://consumer.huawei.com/cn/privacy/privacy-policy/</a></li>
+    </ul>
+
+    <h3>2.6 Apple StoreKit 应用内支付 SDK（仅 iOS/macOS）</h3>
+    <ul>
+      <li><strong>SDK 名称：</strong>Apple StoreKit（In-App Purchase）</li>
+      <li><strong>服务商：</strong>Apple Inc.</li>
+      <li><strong>使用目的：</strong>处理高级版应用内购买、验证购买状态、恢复购买</li>
+      <li><strong>收集信息类型：</strong>购买凭证（Transaction ID）、订单信息、购买状态</li>
+      <li><strong>收集方式：</strong>由 Apple 系统框架处理，仅在发起购买流程时涉及</li>
+      <li><strong>隐私政策：</strong><a href="https://www.apple.com/legal/privacy/" target="_blank">https://www.apple.com/legal/privacy/</a></li>
+    </ul>
+
+    <!-- ==================== 三、系统权限申请与使用 ==================== -->
+    <h2>三、系统权限申请与使用</h2>
+    <p>本应用在提供以下功能时会向您申请相应权限。您可以随时在设备设置中管理或撤销这些权限。</p>
+    <ul>
+      <li><strong>网络权限：</strong>用于局域网设备发现、数据传输、HTTP 服务器功能。本应用的核心功能依赖此权限。</li>
+      <li><strong>存储/媒体访问权限：</strong>用于您选择文件进行传输，以及将接收的文件保存到设备存储。Android 13+ 使用细粒度媒体权限（图片/视频/音频分别授权）。</li>
+      <li><strong>相机权限：</strong>用于扫描二维码以快速建立设备连接。仅在您主动使用扫码功能时申请。</li>
+      <li><strong>屏幕录制/投屏权限：</strong>用于将您的屏幕内容实时投射到局域网内其他设备。每次使用前均需您明确授权，且系统会显示明显提示。</li>
+      <li><strong>前台服务权限：</strong>用于后台文件传输和屏幕录制，确保应用在后台时这些功能仍能正常运行。通知栏会显示正在运行的服务。</li>
+    </ul>
+    <p>关闭上述权限可能会影响对应功能的正常使用，但不会影响应用的其他功能。</p>
+
+    <!-- ==================== 三-A、传感器信息收集 ==================== -->
+    <h2>三-A、传感器信息收集与使用</h2>
+    <p>本应用在以下场景中会使用设备传感器，所有传感器数据仅在您使用对应功能时读取，不会上传至远程服务器：</p>
+
+    <h3>3-A.1 加速度传感器（Accelerometer）</h3>
+    <ul>
+      <li><strong>使用目的：</strong>检测设备方向变化，支持视频播放时的横竖屏自动切换</li>
+      <li><strong>使用场景：</strong>仅在您使用视频播放功能、且播放器处于全屏模式时读取</li>
+      <li><strong>使用范围：</strong>传感器数据仅在设备本地使用，不会上传或共享</li>
+      <li><strong>是否可关闭：</strong>关闭设备"自动旋转"功能即可停止传感器读取</li>
+    </ul>
+
+    <h3>3-A.2 设备序列号（SN）</h3>
+    <ul>
+      <li><strong>收集方式：</strong>本应用不主动读取设备序列号。以下第三方 SDK 可能因功能需要收集设备序列号或等效标识符：</li>
+    </ul>
+    <ul>
+      <li><strong>华为 AGC 基础服务 SDK</strong>：用于华为应用市场服务基础功能（如应用内支付、版本更新），可能收集设备序列号（SN）作为设备标识</li>
+      <li><strong>华为 HMS 应用内支付 SDK</strong>：用于验证购买状态，可能收集设备序列号（SN）用于订单和设备绑定验证</li>
+    </ul>
+    <ul>
+      <li><strong>收集目的：</strong>设备标识、支付验证、应用版本更新</li>
+      <li><strong>使用范围：</strong>由华为软件技术有限公司收集和使用，详见<a href="https://consumer.huawei.com/cn/privacy/privacy-policy/" target="_blank">华为消费者业务隐私声明</a></li>
+      <li><strong>重要提示：</strong>以上 SDK 均在您同意本隐私政策后才会初始化，未同意前不会收集任何信息</li>
+    </ul>
+
+    <!-- ==================== 四、信息的存储与保护 ==================== -->
+    <h2>四、信息的存储与保护</h2>
+    <ul>
+      <li><strong>本地存储：</strong>应用配置、购买状态、主题偏好等数据仅存储在您的设备本地，不会上传至任何服务器。</li>
+      <li><strong>临时缓存：</strong>文件传输过程中产生的临时文件在传输完成后自动清理。</li>
+      <li><strong>局域网传输：</strong>文件及剪切板数据仅在您的局域网内传输，不会经由任何中间服务器。</li>
+      <li><strong>加密存储：</strong>购买状态等敏感信息使用系统级加密存储（Android EncryptedSharedPreferences / iOS Keychain）。</li>
+      <li><strong>安全措施：</strong>我们采取合理的技术措施保护您的信息安全，但请注意互联网环境并非绝对安全。</li>
+    </ul>
+
+    <!-- ==================== 五、信息共享、转让与公开披露 ==================== -->
+    <h2>五、信息共享、转让与公开披露</h2>
+    <ul>
+      <li><strong>我们不会出售您的个人信息。</strong></li>
+      <li>文件内容、剪切板内容等核心数据<strong>不会上传至远程服务器</strong>，也不会分享给任何第三方。</li>
+      <li>仅在以下情形下共享必要信息：
+        <ul>
+          <li>为实现本政策第二条所述的第三方 SDK 服务功能；</li>
+          <li>根据法律法规规定、诉讼争议解决需要，或行政、司法机关依法提出的要求；</li>
+          <li>为保护您或公众的人身财产安全免遭侵害所必需。</li>
+        </ul>
+      </li>
+      <li>如发生合并、收购或破产清算，我们将要求新的持有您个人信息的公司继续受本政策约束，否则将要求其重新取得您的同意。</li>
     </ul>
 
     <!-- ==================== 六、您的权利 ==================== -->
     <h2>六、您的权利</h2>
+    <p>根据相关法律法规，您对您的个人信息享有以下权利：</p>
     <ul>
-      <li><strong>查阅/更正：</strong>您可以随时修改设备名称等可编辑信息。</li>
-      <li><strong>删除：</strong>卸载应用将清除所有本地存储的数据。</li>
-      <li><strong>撤回同意：</strong>可随时在设备设置中撤销已授权的权限，或限制广告追踪。</li>
-      <li><strong>账号注销：</strong>本应用不设账号体系，卸载即视为注销并清除所有数据。</li>
-      <li><strong>停止广告：</strong>购买高级版后将永久停止广告展示。</li>
+      <li><strong>查阅/更正权：</strong>您可以随时修改设备名称等可编辑信息。</li>
+      <li><strong>删除权：</strong>卸载本应用将自动清除所有本地存储的数据。清除缓存可在设置页面操作。</li>
+      <li><strong>撤回同意权：</strong>您可随时在设备系统设置中撤销已授权的权限（如相机、存储权限），或在系统设置中限制广告追踪。</li>
+      <li><strong>账号注销权：</strong>本应用不设账号体系，无需注册登录。卸载应用即视为注销并永久清除所有本地数据。</li>
+      <li><strong>停止广告展示：</strong>购买高级版后将永久停止所有广告展示。</li>
     </ul>
-    <p>如需行使上述权利或有任何问题，请通过本政策"九、联系我们"中的方式与我们联系。我们将在 15 个工作日内予以回复。</p>
+    <p>如需行使上述权利，或对我们的数据处理有任何疑问，请通过本政策"九、联系我们"中的方式与我们联系。我们将在 15 个工作日内予以回复。</p>
 
     <!-- ==================== 七、未成年人保护 ==================== -->
     <h2>七、未成年人保护</h2>
     <ul>
-      <li>本应用<strong>不针对 13 岁以下儿童</strong>设计。</li>
       <li>我们不会故意收集未成年人的个人信息。</li>
-      <li>如发现无意中收集了未成年人信息，我们将立即删除。</li>
+      <li>如果您是未成年人的监护人，发现我们在未获监护人同意的情况下收集了未成年人的个人信息，请通过第九条的联系方式联系我们，我们将尽快删除。</li>
     </ul>
 
-    <!-- ==================== 八、政策更新 ==================== -->
-    <h2>八、政策更新</h2>
+    <!-- ==================== 八、隐私政策更新 ==================== -->
+    <h2>八、隐私政策更新</h2>
     <ul>
-      <li>我们可能适时更新本隐私政策。更新后将在应用内通知您。</li>
-      <li>重大变更需重新同意后方可继续使用。</li>
-      <li>建议您定期查阅本政策了解最新版本。</li>
+      <li>我们可能适时修订本隐私政策。更新后将在应用内以弹窗或通知方式提醒您。</li>
+      <li>如涉及重大变更（如收集信息的目的、方式、范围发生实质性变化），我们将通过显著方式通知您，并<strong>重新征得您的明示同意</strong>后方可继续使用。</li>
+      <li>建议您定期查阅本政策以了解最新版本。</li>
+      <li>本政策更新日期见页首，旧版本不予保留。</li>
     </ul>
 
     <!-- ==================== 九、联系我们 ==================== -->
     <h2>九、联系我们</h2>
-    <p>如果您对本隐私政策有任何疑问、意见或建议，请通过以下方式联系我们：</p>
+    <p>如果您对本隐私政策或个人信息保护有任何疑问、意见、建议或投诉，请通过以下方式联系我们：</p>
     <ul>
-      <li><strong>邮箱：</strong><a href="mailto:super_soft@outlook.com">super_soft@outlook.com</a></li>
+      <li><strong>应用运营者：</strong>SyncFlow 开发团队</li>
+      <li><strong>联系邮箱：</strong><a href="mailto:super_soft@outlook.com">super_soft@outlook.com</a></li>
+      <li><strong>反馈渠道：</strong>您也可通过应用内"设置 → 关于"页面了解联系方式</li>
     </ul>
-    <p>我们将在 15 个工作日内予以回复。</p>
+    <p><strong>响应时限：</strong>我们将在收到您的请求后 <strong>15 个工作日内</strong>予以回复并进行处理。</p>
+    <p>如对我们的回复不满意，特别是我们的个人信息处理行为损害了您的合法权益，您还可以向相关监管机构进行投诉或举报。</p>
 
     <div class="footer">
-      <p>© 2026 SyncFlow</p>
+      <p>© 2026 SyncFlow 开发团队。保留所有权利。</p>
+      <p>本隐私政策最终解释权归 SyncFlow 开发团队所有。</p>
     </div>
   </div>
 </body>
