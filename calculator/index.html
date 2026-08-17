@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="打工人计算器 —— 工资、个税、五险一金、房贷、年终奖、养老金、裁员赔偿、加班费一站式计算工具，数据本地存储不联网更安心。">
+  <title>打工人计算器 · 一站式薪资计算工具</title>
+  <style>
+    :root {
+      --primary: #2b3a67;
+      --accent: #ff6b35;
+      --blue: #4a6cf7;
+      --green: #27ae60;
+      --text: #2b3a67;
+      --muted: #7a829b;
+      --bg: #f2f4f8;
+      --card: #fff;
+      --border: #e8eaf0;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.75;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    /* ── Hero ── */
+    .hero {
+      text-align: center;
+      padding: 72px 20px 84px;
+      background:
+        radial-gradient(1200px 500px at 50% -10%, rgba(74, 108, 247, 0.45), transparent 60%),
+        linear-gradient(160deg, #2b3a67 0%, #3d508f 55%, #4a6cf7 100%);
+      color: #fff;
+    }
+    .logo {
+      width: 92px; height: 92px;
+      margin: 0 auto 22px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 42px; font-weight: 800;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+    }
+    .hero h1 { margin: 0 0 12px; font-size: 36px; letter-spacing: 1px; }
+    .hero .slogan { margin: 0 auto; font-size: 18px; opacity: 0.92; max-width: 560px; }
+    .tags { margin-top: 26px; }
+    .tag {
+      display: inline-block;
+      padding: 7px 16px; margin: 4px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 13px;
+    }
+    .stats {
+      margin-top: 40px;
+      display: flex; justify-content: center; gap: 48px; flex-wrap: wrap;
+    }
+    .stat .num { font-size: 30px; font-weight: 800; }
+    .stat .label { font-size: 13px; opacity: 0.82; }
+
+    /* ── 主体 ── */
+    .wrap { max-width: 920px; margin: -34px auto 0; padding: 0 20px 60px; }
+    .card {
+      background: var(--card);
+      border-radius: 20px;
+      padding: 32px;
+      margin-bottom: 22px;
+      box-shadow: 0 2px 14px rgba(43, 58, 103, 0.06);
+    }
+    h2 {
+      margin: 0 0 8px; font-size: 22px; color: var(--primary);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .sub { margin: 0 0 22px; font-size: 14px; color: var(--muted); }
+
+    /* ── 板块 ── */
+    .section-block { margin-bottom: 26px; }
+    .section-block:last-child { margin-bottom: 0; }
+    .section-head {
+      display: flex; align-items: center; gap: 12px;
+      padding-bottom: 12px; margin-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-head .emblem {
+      width: 44px; height: 44px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; flex-shrink: 0;
+    }
+    .section-head .title { font-size: 18px; font-weight: 700; }
+    .section-head .desc { font-size: 13px; color: var(--muted); }
+    .items { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+    .item {
+      border: 1px solid var(--border);
+      border-radius: 14px; padding: 16px;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .item:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(43, 58, 103, 0.08); }
+    .item .name { font-weight: 700; font-size: 15px; margin-bottom: 6px; }
+    .item .desc { font-size: 13px; color: var(--muted); }
+
+    /* ── 卖点 ── */
+    .points { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+    .point {
+      border: 1px solid var(--border); border-radius: 14px; padding: 18px;
+    }
+    .point .head { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 15px; margin-bottom: 6px; }
+    .point .head .icon { color: var(--green); }
+    .point .body { font-size: 13px; color: var(--muted); }
+
+    /* ── FAQ ── */
+    .faq { border-top: 1px solid var(--border); padding: 14px 0; }
+    .faq:first-of-type { border-top: none; padding-top: 0; }
+    .faq .q { font-weight: 700; font-size: 15px; margin-bottom: 6px; }
+    .faq .q::before { content: "Q："; color: var(--blue); }
+    .faq .a { font-size: 14px; color: var(--muted); }
+    .faq .a::before { content: "A："; color: var(--green); }
+
+    .disclaimer { font-size: 12px; color: var(--muted); text-align: center; }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #121212; --card: #1e1e2e; --border: #2a2a3e; --text: #e6e6e6; --muted: #9aa0b5; }
+      h2 { color: #8fa8ff; }
+      .section-head .title { color: #e6e6e6; }
+      .item:hover { box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4); }
+      .hero { background: radial-gradient(1200px 500px at 50% -10%, rgba(74,108,247,.35), transparent 60%), linear-gradient(160deg, #1a2440 0%, #2a3a6b 55%, #3d508f 100%); }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="logo">计</div>
+    <h1>打工人计算器</h1>
+    <p class="slogan">工资、个税、五险一金、房贷、年终奖、养老金、裁员赔偿、加班费，一站式算清每一分钱</p>
+    <div class="tags">
+      <span class="tag">到手工资</span>
+      <span class="tag">个税计算</span>
+      <span class="tag">五险一金</span>
+      <span class="tag">房贷计算</span>
+      <span class="tag">年终奖</span>
+      <span class="tag">养老金</span>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="num">14</div><div class="label">项计算功能</div></div>
+      <div class="stat"><div class="num">25</div><div class="label">城社保费率</div></div>
+      <div class="stat"><div class="num">0</div><div class="label">广告打扰</div></div>
+      <div class="stat"><div class="num">100%</div><div class="label">本地存储</div></div>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <!-- 简介 -->
+    <section class="card">
+      <h2>👋 认识打工人计算器</h2>
+      <p class="sub">专为职场人打造的一站式薪资计算工具</p>
+      <p style="margin: 0; font-size: 15px;">
+        发薪日总对不上？个税、五险一金、房贷、年终奖算得头疼？求职谈薪不知道税后能到手多少？
+        打工人计算器把 14 项高频计算装进一个 App，覆盖收入、记录、资产、保障四大场景，
+        打开即用、结果秒出，让你的每一分钱都算得明明白白。
+      </p>
+    </section>
+
+    <!-- 功能板块 -->
+    <section class="card">
+      <h2>🧩 功能一览</h2>
+      <p class="sub">五大板块，覆盖从「赚钱」到「保障」的全流程</p>
+
+      <div class="section-block">
+        <div class="section-head">
+          <div class="emblem" style="background:#eef1ff;">🧮</div>
+          <div>
+            <div class="title">计算器</div>
+            <div class="desc">日常计算与历史记录</div>
+          </div>
+        </div>
+        <div class="items">
+          <div class="item"><div class="name">标准计算器</div><div class="desc">四则运算、取反、百分比，支持历史记录</div></div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-head">
+          <div class="emblem" style="background:#e9f7ef;">💰</div>
+          <div>
+            <div class="title">收入</div>
+            <div class="desc">算清每一笔收入与扣款</div>
+          </div>
+        </div>
+        <div class="items">
+          <div class="item"><div class="name">到手工资计算</div><div class="desc">税前 → 五险一金 → 个税 → 到手，一键算清，自动关联城市费率</div></div>
+          <div class="item"><div class="name">个税明细</div><div class="desc">最新七级累进税率 + 专项附加扣除参考，算得准</div></div>
+          <div class="item"><div class="name">五险一金</div><div class="desc">个人 / 单位缴费对比，内置 25 城费率，支持自定义城市</div></div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-head">
+          <div class="emblem" style="background:#e6f7f5;">📒</div>
+          <div>
+            <div class="title">记录</div>
+            <div class="desc">工资与收支，按月留存</div>
+          </div>
+        </div>
+        <div class="items">
+          <div class="item"><div class="name">工资记录本</div><div class="desc">按月记录工资，年度趋势图表一目了然，支持 CSV 导出</div></div>
+          <div class="item"><div class="name">收支记录</div><div class="desc">日常收入支出随手记，月度统计清晰</div></div>
+          <div class="item"><div class="name">年度汇算</div><div class="desc">预估全年应补税 / 退税金额，提前心里有数</div></div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-head">
+          <div class="emblem" style="background:#f4ecfa;">🏠</div>
+          <div>
+            <div class="title">资产</div>
+            <div class="desc">房产与储蓄规划</div>
+          </div>
+        </div>
+        <div class="items">
+          <div class="item"><div class="name">房贷计算</div><div class="desc">商业 / 公积金 / 组合贷款，等额本息 / 本金，含年度还款计划表</div></div>
+          <div class="item"><div class="name">存款规划</div><div class="desc">复利 + 每月定投，收益与本金翻倍时间一目了然</div></div>
+          <div class="item"><div class="name">年终奖个税</div><div class="desc">单独计税 vs 并入综合所得，智能对比推荐最优方案</div></div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-head">
+          <div class="emblem" style="background:#fdeeee;">🛡️</div>
+          <div>
+            <div class="title">保障</div>
+            <div class="desc">医疗、养老与劳动权益</div>
+          </div>
+        </div>
+        <div class="items">
+          <div class="item"><div class="name">医保报销</div><div class="desc">住院 / 门诊报销金额估算</div></div>
+          <div class="item"><div class="name">养老金</div><div class="desc">基础养老金 + 个人账户，含账户增长预测表</div></div>
+          <div class="item"><div class="name">裁员赔偿</div><div class="desc">N+1 / 2N / N 三种场景，自动判断工资封顶</div></div>
+          <div class="item"><div class="name">加班费</div><div class="desc">平时 1.5 倍 / 周末 2 倍 / 节假日 3 倍，算得清楚</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 卖点 -->
+    <section class="card">
+      <h2>✨ 为什么选择我们</h2>
+      <p class="sub">不是又一个计算器，而是为打工人量身定制</p>
+      <div class="points">
+        <div class="point">
+          <div class="head"><span class="icon">✓</span>数据智能联动</div>
+          <div class="body">一处填工资，到手工资、个税、五险一金、年终奖、加班费自动同步，无需重复输入</div>
+        </div>
+        <div class="point">
+          <div class="head"><span class="icon">✓</span>一站全搞定</div>
+          <div class="body">14 项计算一个 App 全包，无需安装多个工具来回切换</div>
+        </div>
+        <div class="point">
+          <div class="head"><span class="icon">✓</span>隐私安全</div>
+          <div class="body">数据仅存本地，不联网、不上传、无第三方 SDK，用得安心</div>
+        </div>
+        <div class="point">
+          <div class="head"><span class="icon">✓</span>简洁易用</div>
+          <div class="body">底部一键切换，打开即用，无广告、无弹窗打扰</div>
+        </div>
+        <div class="point">
+          <div class="head"><span class="icon">✓</span>25 城社保费率</div>
+          <div class="body">覆盖主要一二线城市，还支持自定义城市，异地工作也能算</div>
+        </div>
+        <div class="point">
+          <div class="head"><span class="icon">✓</span>深色模式</div>
+          <div class="body">跟随系统，夜间使用更护眼</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 适用人群 -->
+    <section class="card">
+      <h2>🎯 谁在用</h2>
+      <p class="sub">如果你也在意每一分钱，这款工具就是为你准备的</p>
+      <div class="points">
+        <div class="point"><div class="head">💼 上班族</div><div class="body">发薪日核对到手工资，个税五险一金不再糊涂</div></div>
+        <div class="point"><div class="head">🎓 求职者</div><div class="body">谈薪时快速换算税前 / 税后，心里有底不踩坑</div></div>
+        <div class="point"><div class="head">🏠 购房者</div><div class="body">算清月供与还款计划，评估房贷压力</div></div>
+        <div class="point"><div class="head">🧮 职场人</div><div class="body">加班费、裁员赔偿、年终奖个税，权益算得明明白白</div></div>
+        <div class="point"><div class="head">📊 财务规划者</div><div class="body">存款、养老金、年度汇算，做好长期规划</div></div>
+        <div class="point"><div class="head">👨‍💼 HR / 自由职业者</div><div class="body">快速核算社保、个税，提高效率</div></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="card">
+      <h2>❓ 常见问题</h2>
+      <div class="faq">
+        <div class="q">计算结果准确吗？</div>
+        <div class="a">基于最新个税七级累进税率与各地社保公积金费率计算，结果供参考。实际税费以税务机关核定为准。</div>
+      </div>
+      <div class="faq">
+        <div class="q">我的数据会被上传吗？</div>
+        <div class="a">不会。所有数据仅保存在您的设备本地，应用不联网、不集成第三方 SDK，卸载即清除。</div>
+      </div>
+      <div class="faq">
+        <div class="q">支持哪些城市？</div>
+        <div class="a">内置 25 个主要一二线城市的社保费率，同时支持自定义城市费率，异地工作也能算。</div>
+      </div>
+    </section>
+
+    <p class="disclaimer">
+      本应用计算结果仅供参考，不构成法律或财务建议。实际税费以税务机关核定为准。
+      · <a href="./privacy.html">隐私政策</a>
+      · 联系邮箱：<a href="mailto:super_soft@outlook.com">super_soft@outlook.com</a>
+    </p>
+  </main>
+</body>
+</html>
