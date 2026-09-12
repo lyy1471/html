@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HanziPath — Learn Chinese & HSK by Writing</title>
+<meta name="description" content="HanziPath is a fully offline Chinese learning app: 2,650 characters of stroke-order writing, 5,299 HSK words, SRS review and listening drills. No account, no tracking.">
+<style>
+:root{--bg:#FAFAFA;--card:#FFFFFF;--text:#1A1A1A;--muted:#6F6F6F;--brand:#E53935;--gold:#FFB300;--border:#EAE4DA}
+@media (prefers-color-scheme:dark){:root{--bg:#151515;--card:#1F1F1F;--text:#F1F1F1;--muted:#9C9C9C;--border:#343434}}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Noto Sans",sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+.wrap{max-width:780px;margin:0 auto;padding:28px 20px 64px}
+.top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-weight:800;font-size:15px;color:var(--brand);letter-spacing:.3px}
+select{font:inherit;font-size:13.5px;padding:7px 10px;border-radius:10px;border:1px solid var(--border);background:var(--card);color:var(--text)}
+.hero{text-align:center;padding:28px 0 10px}
+.logo{width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,var(--brand),#B71C1C);color:#fff;font-size:34px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;box-shadow:0 8px 24px rgba(229,57,53,.25)}
+h1{font-size:30px;margin:0 0 6px}
+.tagline{font-size:17px;font-weight:600;color:var(--gold);margin:0 0 10px}
+.desc{color:var(--muted);font-size:14.5px;max-width:560px;margin:0 auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:26px 0}
+.feature{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+.feature .icon{font-size:22px}
+.feature h3{font-size:14.5px;margin:6px 0 4px}
+.feature p{margin:0;font-size:13px;color:var(--muted)}
+.stats{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:8px 0 26px}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:10px 18px;text-align:center}
+.stat b{display:block;font-size:19px;color:var(--brand)}
+.stat span{font-size:12px;color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin:14px 0}
+h2{font-size:16px;margin:0 0 8px;color:var(--brand)}
+p{margin:0;font-size:14.5px}
+footer{margin-top:36px;text-align:center;color:var(--muted);font-size:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <span class="brand">HanziPath</span>
+    <select id="lang" aria-label="Language"></select>
+  </header>
+  <div class="hero">
+    <div class="logo">汉</div>
+    <h1>HanziPath</h1>
+    <p class="tagline" id="tagline"></p>
+    <p class="desc" id="desc"></p>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>2,650</b><span id="s1"></span></div>
+    <div class="stat"><b>5,299</b><span id="s2"></span></div>
+    <div class="stat"><b>57</b><span id="s3"></span></div>
+    <div class="stat"><b>19</b><span id="s4"></span></div>
+  </div>
+  <div class="grid" id="features"></div>
+  <div class="card">
+    <h2 id="fbTitle"></h2>
+    <p id="fbText"></p>
+  </div>
+  <footer>© 2026 HanziPath · v1.0.0 · nm.team.hanzipath</footer>
+</div>
+<script>
+const DATA = {"en": {"label": "English", "tagline": "Learn Chinese by writing it.", "desc": "HanziPath is a fully offline HSK prep app built around one idea: writing characters by hand. Trace the real stroke order, then lock vocabulary in with spaced repetition.", "features": [["✍️", "Stroke-order writing", "Trace 2,650 common characters stroke by stroke on an authentic 田字格 grid."], ["🌟", "Complete HSK 1–6 vocabulary", "5,299 essential words with pinyin, tones, meanings and examples."], ["🧠", "SRS spaced repetition", "A science-based schedule that beats the forgetting curve."], ["🎧", "Listening & dictation", "Auto-played audio drills that train your ear."], ["📝", "Multi-mode quizzes & dictionary", "Character ↔ meaning, audio drills, and a built-in dictionary."], ["🌐", "19 interface languages", "Switch anytime — no restart needed."], ["🔒", "Private & offline", "Everything runs on your device. No account, no tracking, no ads."]], "feedbackTitle": "Feedback & Support", "feedback": "Found a bug or have an idea? Open HanziPath → Me → Feedback to send it straight to us. Prefer email? Write to: __SUPPORT_EMAIL__"}, "zh": {"label": "简体中文", "tagline": "写字，才是记住中文最快的方式。", "desc": "HanziPath 是一款完全离线的 HSK 备考应用，核心只有一个：亲手书写汉字。跟着真实笔顺一笔一划写，再用间隔复习把词汇牢牢锁进长期记忆。", "features": [["✍️", "汉字笔顺书写", "在田字格上逐笔描红 2,650 个常用汉字。"], ["🌟", "完整 HSK 1–6 词库", "5,299 个高频词汇，每词含拼音、声调、释义与例句。"], ["🧠", "SRS 间隔复习", "科学算法安排复习，告别遗忘曲线。"], ["🎧", "听力与听写", "自动播放发音，强化音形对应。"], ["📝", "多题型测验与词典", "字义互转、听音选字，内置词典随手查。"], ["🌐", "19 种界面语言", "随时切换，无需重启。"], ["🔒", "隐私与离线", "全部在本机运行，无需注册、不做追踪、没有广告。"]], "feedbackTitle": "反馈与支持", "feedback": "发现问题或有建议？打开 HanziPath →「我的」→「意见反馈」直接告诉我们，也可以发邮件至：__SUPPORT_EMAIL__"}};
+const STATS = {
+  en: ['characters to trace', 'HSK words', 'grammar points', 'languages'],
+  zh: ['汉字逐笔描红', 'HSK 词汇', '语法点', '种界面语言'],
+};
+const select = document.getElementById('lang');
+Object.keys(DATA).forEach(code => {
+  const o = document.createElement('option');
+  o.value = code; o.textContent = DATA[code].label;
+  select.appendChild(o);
+});
+function render(code){
+  const d = DATA[code], st = STATS[code];
+  document.title = 'HanziPath — ' + d.tagline;
+  document.getElementById('tagline').textContent = d.tagline;
+  document.getElementById('desc').textContent = d.desc;
+  ['s1','s2','s3','s4'].forEach((id, i) => document.getElementById(id).textContent = st[i]);
+  const grid = document.getElementById('features');
+  grid.innerHTML = '';
+  d.features.forEach(f => {
+    const div = document.createElement('div'); div.className = 'feature';
+    const icon = document.createElement('div'); icon.className = 'icon'; icon.textContent = f[0];
+    const h = document.createElement('h3'); h.textContent = f[1];
+    const p = document.createElement('p'); p.textContent = f[2];
+    div.append(icon, h, p); grid.append(div);
+  });
+  document.getElementById('fbTitle').textContent = d.feedbackTitle;
+  document.getElementById('fbText').textContent = d.feedback;
+  document.documentElement.lang = code;
+  try { localStorage.setItem('hanzipath-lang', code); } catch (e) {}
+  select.value = code;
+}
+function detect(){
+  const list = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'en'];
+  for (const tag of list){
+    const low = String(tag).toLowerCase();
+    if (low.startsWith('zh')) return 'zh';
+    const base = low.split('-')[0];
+    if (DATA[base]) return base;
+  }
+  return 'en';
+}
+let initial = null;
+try { initial = localStorage.getItem('hanzipath-lang'); } catch (e) {}
+render(DATA[initial] ? initial : detect());
+select.addEventListener('change', () => render(select.value));
+</script>
+</body>
+</html>
